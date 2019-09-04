@@ -3,6 +3,7 @@ package com.everis;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,6 +12,8 @@ import Exercicio2.Actor;
 import Exercicio2.Director;
 import Exercicio2.TipoActor;
 import Exercicio3.Film;
+import Exercicio4.NoRatedFilmsException;
+import Exercicio4.User;
 
 public class Main {
 
@@ -55,6 +58,23 @@ public class Main {
 			System.out.println(people + "\n\n<><><><>\n");
 			
 		}
+		
+		HashMap<Film, Integer> ratingsUser1 = new HashMap<Film, Integer>();
+		ratingsUser1.put(film1, 7);
+		ratingsUser1.put(film2, 5);
+		ratingsUser1.put(film3, 9);
+		ratingsUser1.put(film4, 4);
+		ratingsUser1.put(film5, 8);
+		User user1 = new User("Joao", "Rafael", 23, ratingsUser1, Arrays.asList(film1,film2,film3,film4,film5), "JRafa");
+		
+		try {
+			System.out.println(user1.getAverageRating());
+		} catch (NoRatedFilmsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 }

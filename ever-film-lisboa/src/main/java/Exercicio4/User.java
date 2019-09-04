@@ -51,15 +51,11 @@ public class User extends People implements IUser {
 		if (ratings.size() == 0) {
 			throw new NoRatedFilmsException();
 		} else {
-			/*
-			 * for (int i = 0; i< ratings.size(); i++) { contador += ratings.get(i); return
-			 * (double) (contador/ratings.size()); }
-			 */
 
 			for (Integer filmRating : ratings.values()) {
 				contador += filmRating;
 			}
-			return (double) (contador / ratings.size());
+			return  ((double)contador) / ratings.size();
 		}
 	}
 
