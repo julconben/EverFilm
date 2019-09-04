@@ -7,37 +7,34 @@ public class Actor extends People {
 
 	List<Integer> oscarNominations = new ArrayList<Integer>();
 	ActorType actorType;
-	
-	public enum ActorType {
-		MAIN, SUPPORTING, STUNTMAN;
-	}
+
 	
 	public Actor() {
 		super();
 	}
 	
-	public Actor(ArrayList oscarNominations, String actorType) {
+	public Actor(ArrayList<Integer> oscarNominations, ActorType actorType) {
 		this.oscarNominations = oscarNominations;
-		this.actorType = ActorType.valueOf(actorType);
+		this.actorType = actorType;
 	}
 
 	public ActorType getActorType() {
 		return actorType;
 	}
 	
-	public void setActorType(String actorType) {
+	public void setActorType(ActorType actorType) {
 		if (ActorType.values().equals(actorType)) {
-		this.actorType = ActorType.valueOf(actorType);
+		this.actorType = actorType;
 		}
 		
 	}
 
-	public Actor(ArrayList oscarNominations) {
+	public Actor(ArrayList<Integer> oscarNominations) {
 		this.oscarNominations=oscarNominations;
 	}
 
-	public ArrayList getOscarNominations() {
-		return (ArrayList) oscarNominations;
+	public ArrayList<Integer> getOscarNominations() {
+		return (ArrayList<Integer>) oscarNominations;
 	}
 
 	public void setOscarNominations(List<Integer> oscarNominations) {

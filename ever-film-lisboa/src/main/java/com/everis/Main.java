@@ -1,12 +1,17 @@
 package com.everis;
 
 /**
- * Hello world!
+ * EVERFILM
+ * 
+ * author: Diana Nogueira
  *
  */
 public class Main {
     public static void main(String[] args) {
-        // Add your run execution here
-        System.out.println("Hello World!");
+        Film f = new Film();
+        
+        /** TESTE GETQUALITY*/
+        f.setQuality(1);
+        System.out.println(f.getQualityString());
     }
 }
