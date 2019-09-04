@@ -9,6 +9,12 @@ public class Director extends People {
 
 	private String productionCompany;
 	private List<String> Filmography = new ArrayList<String>();
+	
+	public Director(String name, String surname, int age, String productionCompany, List<String> filmography2) {
+		super(name, surname, age);
+		this.productionCompany = productionCompany;
+		Filmography = filmography2;
+	}
 
 	public String getProductionCompany() {
 		return productionCompany;
@@ -26,11 +32,7 @@ public class Director extends People {
 		Filmography = filmography;
 	}
 
-	public Director(String name, String surname, int age, String productionCompany, List<String> filmography2) {
-		super(name, surname, age);
-		this.productionCompany = productionCompany;
-		Filmography = filmography2;
-	}
+
 
 	@Override
 	public String toString() {

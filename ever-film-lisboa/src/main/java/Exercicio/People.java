@@ -1,11 +1,16 @@
 package Exercicio;
 
-import Exercicio3.Film;
-
 public class People implements Comparable<People> {
 	private String name;
 	private String surname;
 	private Integer age;
+
+	public People(String name, String surname, int age) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.age = age;
+	}
 
 	public String getName() {
 		return name;
@@ -29,18 +34,6 @@ public class People implements Comparable<People> {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-	public People(String name, String surname, int age) {
-		super();
-		this.name = name;
-		this.surname = surname;
-		this.age = age;
-	}
-
-	public People() {
-		super();
-
 	}
 
 	public int compareTo(People otherPeople) {

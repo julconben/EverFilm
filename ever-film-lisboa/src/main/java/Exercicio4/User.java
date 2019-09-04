@@ -5,13 +5,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Exercicio.People;
 import Exercicio3.Film;
 
-public class User implements IUser {
+public class User extends People implements IUser {
 
 	private Map<Film, Integer> ratings = new HashMap<Film, Integer>();
 	private List<Film> watchedFilms = new ArrayList<Film>();
 	private String username;
+
+	public User(String name, String surname, int age, Map<Film, Integer> ratings, List<Film> watchedFilms,
+			String username) {
+		super(name, surname, age);
+		this.ratings = ratings;
+		this.watchedFilms = watchedFilms;
+		this.username = username;
+	}
 
 	public Map<Film, Integer> getRatings() {
 		return ratings;
@@ -67,6 +76,11 @@ public class User implements IUser {
 			return true;
 		} else
 			return false;
+	}
+
+	@Override
+	public String toString() {
+		return this.getClass().getSimpleName() + "\n" + super.toString();
 	}
 
 }

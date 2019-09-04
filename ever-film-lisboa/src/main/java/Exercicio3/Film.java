@@ -13,6 +13,15 @@ public class Film implements Comparable<Film>, IFilm {
 	private Director director;
 	private List<Actor> cast;
 
+	public Film(String title, Integer year, Integer quality, Director director, List<Actor> cast) {
+		super();
+		this.title = title;
+		this.year = year;
+		this.quality = quality;
+		this.director = director;
+		this.cast = cast;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -82,20 +91,11 @@ public class Film implements Comparable<Film>, IFilm {
 
 	}
 
-	public Film(String title, Integer year, Integer quality, Director director, List<Actor> cast) {
-		super();
-		this.title = title;
-		this.year = year;
-		this.quality = quality;
-		this.director = director;
-		this.cast = cast;
-	}
-
 	public int compareTo(Film otherFilm) {
-		if(this.getQuality()==otherFilm.getQuality()) {
+		if (this.getQuality() == otherFilm.getQuality()) {
 			return this.getYear().compareTo(otherFilm.getYear());
 		} else {
-			return this.quality.compareTo(otherFilm.quality);			
+			return this.quality.compareTo(otherFilm.quality);
 		}
 	}
 

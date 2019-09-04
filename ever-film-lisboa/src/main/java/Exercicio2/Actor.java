@@ -10,6 +10,13 @@ public class Actor extends People {
 	private List<Integer> oscarNominations = new ArrayList<Integer>();
 	private TipoActor tipoActor; 
 	
+	public Actor(String name, String surname, int age,TipoActor tipoActor, List<Integer> oscarNominations) {
+		super(name, surname, age);
+		
+		this.oscarNominations = oscarNominations;
+		this.tipoActor = tipoActor;
+	}
+	
 	public TipoActor getTipoActor() {
 		return tipoActor;
 	}
@@ -26,12 +33,7 @@ public class Actor extends People {
 		this.oscarNominations = oscarNominations;
 	}
 
-	public Actor(String name, String surname, int age,TipoActor tipoActor, List<Integer> oscarNominations) {
-		super(name, surname, age);
-		
-		this.oscarNominations = oscarNominations;
-		this.tipoActor = tipoActor;
-	}
+
 
 	@Override
 	public String toString() {
