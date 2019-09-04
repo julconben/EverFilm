@@ -22,6 +22,8 @@ public class Main {
 		Actor leo = new Actor("Leonardo", "DiCaprio", 44, TipoActor.MAIN, Arrays.asList(2005, 2007, 2014, 2017));
 		Actor kate = new Actor("Kate", "Winslet", 43, TipoActor.MAIN, Arrays.asList(2002, 2005, 2007, 2009, 2016));
 		Actor billy = new Actor("Billy", "Zane", 53, TipoActor.SUPPORTING, null);
+		Actor tom = new Actor("Tom", "Cruise", 54, TipoActor.SUPPORTING, null);
+		Actor amy = new Actor("Amy", "Adams", 34, TipoActor.MAIN, null);
 		Director james = new Director("James", "Cameron", 65, "20th Century Fox",
 				Arrays.asList("Titanic", "Avatar", "Terminator"));
 
@@ -70,10 +72,21 @@ public class Main {
 		try {
 			System.out.println(user1.getAverageRating());
 		} catch (NoRatedFilmsException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		System.out.println("-------------------");
+		ArrayList<Actor> listaActores = new ArrayList<Actor>(Arrays.asList(leo,kate,billy,tom,amy));
+		ArrayList<Actor> listaActoresOscar = new ArrayList<Actor>();
+		
+		System.out.println(listaActores.get(0).toString());
+		
+		/*
+		 * for(int i = 0; i<listaActores.size();i++) {
+		 * if(listaActores.get(i).getOscarNominations().size()>0) {
+		 * listaActoresOscar.add(listaActores.get(i)); } }
+		 */
+		System.out.println(listaActoresOscar);
 		
 	}
 
