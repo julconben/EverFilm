@@ -1,6 +1,8 @@
 package com.everis;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -122,14 +124,19 @@ public class Main {
         List<Film> allFilms = new ArrayList<Film>();
         allFilms.add(film1);
         allFilms.add(film2);
-        allFilms.add(film3);
         allFilms.add(film4);
         allFilms.add(film5);
+        allFilms.add(film3);
+
+ 
+        //Prints list of all films, sorted by quality      
+      Collections.sort(allFilms);
         
-      //Prints list of all films
+
         for(int i=0; i<allFilms.size(); i++) 
         	System.out.println(allFilms.get(i).toString());
         
+
         
         
         /**teste getAverageRating()*/
