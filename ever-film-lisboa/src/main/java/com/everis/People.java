@@ -1,10 +1,10 @@
 package com.everis;
 
-public class People {
+public class People implements Comparable<People> {
 	
 	String firstName;
 	String surName;
-	int age;
+	Integer age;
 	
 	
 	public People() {
@@ -38,6 +38,9 @@ public class People {
 	
 	public void setAge(int age) {
 		this.age = age;
+	}
+	public int compareTo(People other) {
+		return age.compareTo(other.age) ;
 	}
 	
 

@@ -30,6 +30,12 @@ public class Main {
     	listFilms2.add("Pokemon");
     	listFilms2.add("Barbie");
     	
+    	//people **********************************************************************************************************************************************
+    	People people1 = new People("Joao","Pedro", 15);
+    	People people2 = new People("Maria","Silva", 35);
+    	People people3 = new People("Antonia","Lopes", 52);
+    	People people4 = new People("Pedro","Santos", 47);
+    	
     	//Directores ******************************************************************************************************************************************
     	Director director1 = new Director("Frank", "Darabout", 85, "Disney", listFilms1); //Diretor
     	Director director2= new Director("James", "Cameron", 50, "21 century Fox", listFilms2); //Diretor
@@ -118,8 +124,6 @@ public class Main {
         
         User user1 = new User("Xana", "Goncalves", 45, "", ratings1, films1);
         User user2 = new User("Luis", "Lopes", 50, "", ratings2, films2);
-
-        /**Print FILMS*/
         
         List<Film> allFilms = new ArrayList<Film>();
         allFilms.add(film1);
@@ -129,18 +133,33 @@ public class Main {
         allFilms.add(film3);
 
  
-        //Prints list of all films, sorted by quality      
-      Collections.sort(allFilms);
+        /** Prints list of all films, sorted by quality*/    
         
-
+        Collections.sort(allFilms);
         for(int i=0; i<allFilms.size(); i++) 
         	System.out.println(allFilms.get(i).toString());
         
-
+        List<People> allPeople = new ArrayList<People>();
+        
+        allPeople.add(user2);
+        allPeople.add(user1);
+        allPeople.add(director1);
+        allPeople.add(director2);
+        allPeople.add(actor1);
+        allPeople.add(actor2);
+        allPeople.add(actor3);
+        allPeople.add(people1);
+        allPeople.add(people2);
+        allPeople.add(people3);
+        allPeople.add(people4);
+        
+        Collections.sort(allPeople);
+        for(int i=0; i<allPeople.size(); i++) 
+        	System.out.println(allPeople.get(i).firstName +" "+ allPeople.get(i).surName +" "+  allPeople.get(i).age);
         
         
-        /**teste getAverageRating()*/
-//        System.out.println(user1.getAverageRating());
+//        /**teste getAverageRating()*/
+//       System.out.println(user1.getAverageRating());
         
 //        /** TESTE GETSTRING*/
 //        System.out.println(film1.toString());
