@@ -13,7 +13,8 @@ public class Actor extends People {
 		super();
 	}
 	
-	public Actor(ArrayList<Integer> oscarNominations, ActorType actorType) {
+	public Actor(String firstName, String surName, int age, ArrayList<Integer> oscarNominations, ActorType actorType) {
+		super(firstName, surName, age);
 		this.oscarNominations = oscarNominations;
 		this.actorType = actorType;
 	}
@@ -23,10 +24,7 @@ public class Actor extends People {
 	}
 	
 	public void setActorType(ActorType actorType) {
-		if (ActorType.values().equals(actorType)) {
-		this.actorType = actorType;
-		}
-		
+		this.actorType = actorType;	
 	}
 
 	public Actor(ArrayList<Integer> oscarNominations) {

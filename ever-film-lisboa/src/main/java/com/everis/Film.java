@@ -73,6 +73,19 @@ public class Film implements IFilm{
 	public void setFilmType(String filmType) {
 		this.filmType = FilmType.valueOf(filmType);
 	}
+	
+	/** toString
+	 * 
+	 * Returns a String with [Title – Year – getQuality (quality)]*/
+	public String toString() {
+		
+		return ("[ "+ title + " - " + year.toString() + " - " + getQualityString()+" ]");
+		
+	}
+	
+	/**getQualityString
+	 * 
+	 * Returns a string reporting the quality category of the film*/
 
 	public String getQualityString() {
 		

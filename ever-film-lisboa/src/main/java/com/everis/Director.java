@@ -12,8 +12,8 @@ public class Director extends People {
 			super();	
 	}
 	
-	public Director(String productionCompany, List<String> filmography) {
-		super();
+	public Director(String firstName, String surName, int age, String productionCompany, List<String> filmography) {
+		super(firstName, surName, age);
 		this.productionCompany = productionCompany;
 		this.filmography = filmography;
 	}
