@@ -8,7 +8,7 @@ import Exercicio.People;
 public class Director extends People {
 
 	private String productionCompany;
-	private List<String> Filmography;
+	private List<String> Filmography = new ArrayList<String>();
 
 	public String getProductionCompany() {
 		return productionCompany;
@@ -28,7 +28,6 @@ public class Director extends People {
 
 	public Director(String name, String surname, int age, String productionCompany, List<String> filmography2) {
 		super(name, surname, age);
-		Filmography = new ArrayList<String>();
 		this.productionCompany = productionCompany;
 		Filmography = filmography2;
 	}
