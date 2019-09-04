@@ -13,7 +13,7 @@ public class Actor extends People {
 		super();
 	}
 	
-	public Actor(String firstName, String surName, int age, ArrayList<Integer> oscarNominations, ActorType actorType) {
+	public Actor(String firstName, String surName, int age, List<Integer> oscarNominations, ActorType actorType) {
 		super(firstName, surName, age);
 		this.oscarNominations = oscarNominations;
 		this.actorType = actorType;

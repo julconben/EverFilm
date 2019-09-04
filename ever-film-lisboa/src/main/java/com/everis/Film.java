@@ -16,14 +16,14 @@ public class Film implements IFilm{
 		//TODO
 	}
 
-	public Film(String title, Integer year, Integer quality, Director director, List<Actor> cast, String filmType) {
+	public Film(String title, Integer year, Integer quality, Director director, List<Actor> cast, FilmType filmType) {
 		super();
 		this.title = title;
 		this.year = year;
 		this.quality = quality;
 		this.director = director;
 		this.cast = cast;
-		this.filmType = FilmType.valueOf(filmType);
+		this.filmType = filmType;
 	}
 
 	public String getTitle() {
