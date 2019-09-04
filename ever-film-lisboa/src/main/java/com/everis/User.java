@@ -23,6 +23,12 @@ public class User extends People implements IUser{
 		this.userName = userName;
 	}
 	
+	public User(String firstName, String surName, int age, String userName, HashMap<String, Integer> ratings, List<Film> watchedFilms) {
+		super(firstName, surName, age);
+		this.userName = userName;
+		this.ratings = ratings;
+		this.watchedFilms = watchedFilms;
+	}
 	public String getUserName() {
 		return userName;
 	}
@@ -41,16 +47,18 @@ public class User extends People implements IUser{
 	public void setWatchedFilms(List<Film> watchedFilms) {
 		this.watchedFilms = watchedFilms;
 	}
+	
 	public double getAverageRating() {
 		
-		List<Integer> rat = (List<Integer>) ratings.values();
+		List<Integer> rat = new ArrayList<Integer>(ratings.values());
 		double totalRating = 0;
+		int i;
 		
-		for (int i=0; i < ratings.size(); i++) {
-			totalRating =+ rat.get(i);
+		for (i=0; i < ratings.size(); i++) {
+			totalRating = totalRating + rat.get(i);
 		}
 		
-		return totalRating/ratings.size();
+		return totalRating/i;
 	}
 
 }

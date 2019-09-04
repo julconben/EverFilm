@@ -1,6 +1,7 @@
 package com.everis;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -34,7 +35,7 @@ public class Main {
     	//Oscar lists******************************************************************************************************************************************
     	List<Integer> oscars1 = new ArrayList<Integer>(); //simulate 'random' oscar nominations
     	for(int i=0; i<5; i++)
-    		m.add(1991+i);
+    		oscars1.add(1991+i);
     	
     	List<Integer> oscars2 = new ArrayList<Integer>(); //simulate 'random'  oscar nominations
     	for(int i=0; i<5; i++)
@@ -67,23 +68,65 @@ public class Main {
     	act3.add(actor1);
     	
     	//Films**********************************************************************************************************************************************
-        Film film1 = new Film("The Shawshank Redemption", 1994, 9, director1 , act1, com.everis.FilmType.DRAMA);
-        Film film2 = new Film("The Godfather", 1996, 9, director2 , act2, com.everis.FilmType.DRAMA);
-        Film film3 = new Film("The Ring", 2019, 9, director1 , act3, com.everis.FilmType.THRILLER);
-        Film film4 = new Film("Nemo", 2005, 9, director2 , act2, com.everis.FilmType.CARTOON);
-        Film film5 = new Film("Pocahontas", 1998, 9, director1 , act3, com.everis.FilmType.CARTOON);
-        Film film6 = new Film("Maleficent", 2015, 9, director2 , act3, com.everis.FilmType.DRAMA);        
-        Film film7 = new Film("Lion King", 1995, 9, director1 , act1, com.everis.FilmType.COMMEDY);        
-        Film film8 = new Film("Pokemon", 1999, 9, director2 , act1, com.everis.FilmType.CARTOON);
+        Film film1 = new Film("The Shawshank Redemption", 1994, 1, director1 , act1, com.everis.FilmType.DRAMA);
+        Film film2 = new Film("The Godfather", 1996, 2, director2 , act2, com.everis.FilmType.DRAMA);
+        Film film3 = new Film("The Ring", 2019, 3, director1 , act3, com.everis.FilmType.THRILLER);
+        Film film4 = new Film("Nemo", 2005, 4, director2 , act2, com.everis.FilmType.CARTOON);
+        Film film5 = new Film("Pocahontas", 1998, 5, director1 , act3, com.everis.FilmType.CARTOON);
+        Film film6 = new Film("Maleficent", 2015, 6, director2 , act3, com.everis.FilmType.DRAMA);        
+        Film film7 = new Film("Lion King", 1995, 7, director1 , act1, com.everis.FilmType.COMMEDY);        
+        Film film8 = new Film("Pokemon", 1999, 8, director2 , act1, com.everis.FilmType.CARTOON);
         Film film9 = new Film("Barbie", 1990, 9, director1 , act2, com.everis.FilmType.CARTOON);
-        Film film10 = new Film("Once Upon a Time", 2018, 9, director2 , act1, com.everis.FilmType.COMMEDY);
+        Film film10 = new Film("Once Upon a Time", 2018, 10, director2 , act1, com.everis.FilmType.COMMEDY);
         
+        //Ratings*******************************************************************************************************************************************
+        HashMap<String, Integer> ratings1 = new HashMap<String, Integer>();
+        ratings1.put("The Goodfather", 10);
+        ratings1.put("Lion King", 5);
+        ratings1.put("Pokemon", 4);
+        ratings1.put("Once Upon a Time", 8);
         
-        /** TESTE GETSTRING*/
-        System.out.println(shawshank.toString());
+        HashMap<String, Integer> ratings2 = new HashMap<String, Integer>();
         
-        /** TESTE GETQUALITY*/
-        System.out.println(shawshank.getQualityString());
+        ratings1.put("The Goodfather", 8);
+        ratings1.put("Nemo", 10);
+        ratings1.put("Lion King", 7);
+        ratings1.put("Pokemon", 1);
+        ratings1.put("Once Upon a Time", 10);
+        
+        //watchedFilms*************************************************************************************************************************************
+        List<Film> films1 = new ArrayList<Film>();
+        films1.add(film10);
+        films1.add(film1);
+        films1.add(film4);
+        films1.add(film6);
+        films1.add(film8);
+        
+        List<Film> films2 = new ArrayList<Film>();
+        films2.add(film1);
+        films2.add(film7);
+        films2.add(film4);
+        films2.add(film9);
+        
+               
+        //Users*********************************************************************************************************************************************
+        User user1 = new User("Xana", "Goncalves", 45, "", ratings1, films1);
+        User user2 = new User("Luis", "Lopes", 50, "", ratings2, films2);
+
+        System.out.println(user1.getAverageRating());
+        
+//        /** TESTE GETSTRING*/
+//        System.out.println(film1.toString());
+//        System.out.println(film3.toString());
+//        System.out.println(film5.toString());
+//        System.out.println(film7.toString());
+        
+//        /** TESTE GETQUALITY*/
+//        System.out.println(film1.getQualityString());
+//        System.out.println(film4.getQualityString());
+//        System.out.println(film6.getQualityString());
+//        System.out.println(film8.getQualityString());
+//        System.out.println(film10.getQualityString());
         
         
 
