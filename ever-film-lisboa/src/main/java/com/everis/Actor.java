@@ -1,8 +1,11 @@
 package com.everis;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Actor extends People {
 
-	int [] oscarNominations;
+	List<Integer> oscarNominations = new ArrayList<Integer>();
 	ActorType actorType;
 	
 	public enum ActorType {
@@ -13,8 +16,7 @@ public class Actor extends People {
 		super();
 	}
 	
-	public Actor(int[] oscarNominations, String actorType) {
-		super();
+	public Actor(ArrayList oscarNominations, String actorType) {
 		this.oscarNominations = oscarNominations;
 		this.actorType = ActorType.valueOf(actorType);
 	}
@@ -30,15 +32,15 @@ public class Actor extends People {
 		
 	}
 
-	public Actor(int [] oscarNominations) {
+	public Actor(ArrayList oscarNominations) {
 		this.oscarNominations=oscarNominations;
 	}
 
-	public int[] getOscarNominations() {
-		return oscarNominations;
+	public ArrayList getOscarNominations() {
+		return (ArrayList) oscarNominations;
 	}
 
-	public void setOscarNominations(int[] oscarNominations) {
+	public void setOscarNominations(List<Integer> oscarNominations) {
 		this.oscarNominations = oscarNominations;
 	}
 

@@ -1,15 +1,18 @@
 package com.everis;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Director extends People {
 
 	String productionCompany;
-	String[] filmography;
+	List<String> filmography = new ArrayList<String>();
 	
 	public Director() {
 			super();	
 	}
 	
-	public Director(String productionCompany, String[] filmography) {
+	public Director(String productionCompany, List<String> filmography) {
 		super();
 		this.productionCompany = productionCompany;
 		this.filmography = filmography;
@@ -24,11 +27,11 @@ public class Director extends People {
 		this.productionCompany = productionCompany;
 	}
 
-	public String[] getFilmography() {
+	public List<String> getFilmography() {
 		return filmography;
 	}
 
-	public void setFilmography(String[] filmography) {
+	public void setFilmography(List<String> filmography) {
 		this.filmography = filmography;
 	}
 
