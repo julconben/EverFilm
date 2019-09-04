@@ -1,24 +1,35 @@
 package com.everis;
 
+import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 
 
 public class User extends People implements IUsuario {
 
-    private HashMap<Film, Integer> ratings;
+    private HashMap<String,Integer> ratings;
     private List<String> watchedFilms;
     private String username;
+    
+    public void testRatings(String args[]) {
+
+    	ratings = new HashMap<String,Integer>();
+    	
+    	ratings.put("A",1);
+    	ratings.put("A",2);
+    	ratings.put("A",3);
+    }
+    
 	public double getAverageRating() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public HashMap<Film, Integer> getRatings() {
+	public HashMap<String,Integer> getRatings() {
 		return ratings;
 	}
 
-	public void setRatings(HashMap<Film, Integer> ratings) {
+	public void setRatings(HashMap<String, Integer> ratings) {
 		this.ratings = ratings;
 	}
 
