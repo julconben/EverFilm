@@ -1,6 +1,7 @@
 package com.everis;
 
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,19 +13,37 @@ public class User extends People implements IUsuario {
     private String username;
     
     public void testRatings(String args[]) {
-
-    	ratings = new HashMap<String,Integer>();
     	
-    	ratings.put("A",1);
-    	ratings.put("A",2);
-    	ratings.put("A",3);
+    	for (Entry<String, Integer> entry : ratings.entrySet()) {
+    	    String key = entry.getKey();
+    	    Object value = entry.getValue();
+    	}
+    	
+    
     }
     
-	public double getAverageRating() {
-		// TODO Auto-generated method stub
-		return 0;
+    public double getAverageRating() {
+		double averageRating = 0;
+		if (ratings != null && !ratings.isEmpty()) {
+			int entradas = ratings.values().size();
+			double soma = 0;
+			for (Integer value : ratings.values()) {
+				soma = soma + value;
+			}
+
+			averageRating = soma / entradas;
+
+		} else {
+			// throw new NoRatedFilmsException();
+		}
+		return averageRating;
 	}
 
+    
+    
+    
+    
+    
 	public HashMap<String,Integer> getRatings() {
 		return ratings;
 	}

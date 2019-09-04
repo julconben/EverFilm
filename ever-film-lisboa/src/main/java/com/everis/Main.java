@@ -1,6 +1,24 @@
 package com.everis;
 
+import java.util.HashMap;
+
 public class Main{
+	
+	public static void main (String[] args) {
+		User emanuel = new User();
+		
+		emanuel.setAge(22);
+		HashMap<String, Integer> ratings = new HashMap<String,Integer>();
+		
+		ratings.put("A",4);
+		ratings.put("B",10);
+		ratings.put("C",8);
+		ratings.put("D",10);
+		
+		emanuel.setRatings(ratings);
+		
+		System.out.println("a média é -->" + String.valueOf(emanuel.getAverageRating()));
+	}
 }
 /*
 Ejercicio 1. Class People:
@@ -53,4 +71,21 @@ GOOD (Entre 6.1 y 8), EXCELENT(entre 8.1 y 10)) según un atributo quality (Integ
 	En la class Film extender de Comparable para poder usar el método compareTo. Para comparar dos Films hay que usar el atributo quality (en caso de empate usar year)
 Probar a ordenar la lista de películas anterior e imprimir por pantalla
 Crear en la class Main una lista de People y añadir Users, Directors y Actors. En la class People extender de Comparable 
-para ordenar por age. Intentar ordenar la lista y mostrar por pantalla.*/
+para ordenar por age. Intentar ordenar la lista y mostrar por pantalla.
+--------------------------------
+- Crear una class Billboard con un atributo de tipo LinkedList de Film llamado filmBillBoard
+- Crear un Getter pero NO el setter
+- Crear un constructor vacio que inicialize el atributo filmBillBoard vacío
+- Crear una interface IBillBoard con los siguientes métodos:
+toString() retorna String
+getBestFilm() retorna Film
+addFilm(Film) retorna Boolean
+removeOldFilm() retorna Film
+- En la Class Billboard, implementar IBillboard y completar los métodos toString() -> Retornar String con la lista de Films como String 
+getBestFilm() retorna el Film con mejor quality
+addFilm(Film) retorna Boolean:
+- Comprueba si filmBillBoard tiene un size mayor que 5, si no lo tiene podrá añadir un Film y devuelve True, en otro caso devuelve False.
+removeOldFilm() retorna Film
+- Remove el Film que lleva más tiempo en el Billboard y lo retorna
+- En la Class Main crear una lista de Actors de al menos 5 elementos y intentar crear un loop que añada a otra List los actores que han sido nominados a un Oscar.
+*/
