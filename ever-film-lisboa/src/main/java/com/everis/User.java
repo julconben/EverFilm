@@ -10,12 +10,10 @@ public class User extends People implements IUser{
 	String userName;
 	HashMap<String, Integer> ratings = new HashMap<String, Integer>();
 	List<Film> watchedFilms = new ArrayList<Film>();
-		
-	public User() {
+	
+	public User(String userName) {
 		super();
-	}
-	public User(String firstName, String surName, int age) {
-		super(firstName, surName, age);
+		this.userName = userName;
 	}
 
 	public User(String firstName, String surName, int age, String userName) {
@@ -48,7 +46,34 @@ public class User extends People implements IUser{
 		this.watchedFilms = watchedFilms;
 	}
 	
-	public double getAverageRating() {
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
+		return true;
+	}
+
+	public double getAverageRating() { //TODO NO RATED FILM EXCEPTION
 		
 		List<Integer> rat = new ArrayList<Integer>(ratings.values());
 		double totalRating = 0;
@@ -60,5 +85,7 @@ public class User extends People implements IUser{
 		
 		return totalRating/i;
 	}
+	
+	
 
 }

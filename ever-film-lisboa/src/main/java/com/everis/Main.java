@@ -80,7 +80,9 @@ public class Main {
         Film film10 = new Film("Once Upon a Time", 2018, 10, director2 , act1, com.everis.FilmType.COMMEDY);
         
         //Ratings*******************************************************************************************************************************************
+        
         HashMap<String, Integer> ratings1 = new HashMap<String, Integer>();
+        
         ratings1.put("The Goodfather", 10);
         ratings1.put("Lion King", 5);
         ratings1.put("Pokemon", 4);
@@ -95,6 +97,7 @@ public class Main {
         ratings1.put("Once Upon a Time", 10);
         
         //watchedFilms*************************************************************************************************************************************
+        
         List<Film> films1 = new ArrayList<Film>();
         films1.add(film10);
         films1.add(film1);
@@ -110,10 +113,27 @@ public class Main {
         
                
         //Users*********************************************************************************************************************************************
+        
         User user1 = new User("Xana", "Goncalves", 45, "", ratings1, films1);
         User user2 = new User("Luis", "Lopes", 50, "", ratings2, films2);
 
-        System.out.println(user1.getAverageRating());
+        /**Print FILMS*/
+        
+        List<Film> allFilms = new ArrayList<Film>();
+        allFilms.add(film1);
+        allFilms.add(film2);
+        allFilms.add(film3);
+        allFilms.add(film4);
+        allFilms.add(film5);
+        
+      //Prints list of all films
+        for(int i=0; i<allFilms.size(); i++) 
+        	System.out.println(allFilms.get(i).toString());
+        
+        
+        
+        /**teste getAverageRating()*/
+//        System.out.println(user1.getAverageRating());
         
 //        /** TESTE GETSTRING*/
 //        System.out.println(film1.toString());

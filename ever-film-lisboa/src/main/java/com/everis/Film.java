@@ -3,7 +3,7 @@ package com.everis;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Film implements IFilm{
+public class Film implements IFilm, Comparable{
 	
 	String title;
 	Integer year;
@@ -106,5 +106,13 @@ public class Film implements IFilm{
 		
 		return null;
 	}
+
+	public int compareTo(Film other) {
+		if (quality==other.quality)
+			return year.compareTo(other.year);
+		return quality.compareTo(other.quality);
+	}
+	
+	
 
 }
