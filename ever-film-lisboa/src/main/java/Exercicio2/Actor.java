@@ -7,7 +7,7 @@ import Exercicio.People;
 
 public class Actor extends People {
 
-	private List<Integer> oscarNominations = new ArrayList<Integer>();
+	private List<Integer> oscarNominations;
 	private TipoActor tipoActor; 
 	
 	public TipoActor getTipoActor() {
@@ -28,6 +28,7 @@ public class Actor extends People {
 
 	public Actor(String name, String surname, int age,TipoActor tipoActor, List<Integer> oscarNominations) {
 		super(name, surname, age);
+		oscarNominations = new ArrayList<Integer>();
 		this.oscarNominations = oscarNominations;
 		this.tipoActor = tipoActor;
 	}
