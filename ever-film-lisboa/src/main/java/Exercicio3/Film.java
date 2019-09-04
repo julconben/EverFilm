@@ -5,7 +5,7 @@ import java.util.List;
 import Exercicio2.Actor;
 import Exercicio2.Director;
 
-public class Film implements IFilm {
+public class Film implements Comparable<Film>, IFilm {
 
 	private String title;
 	private Integer year;
@@ -89,6 +89,14 @@ public class Film implements IFilm {
 		this.quality = quality;
 		this.director = director;
 		this.cast = cast;
+	}
+
+	public int compareTo(Film otherFilm) {
+		if(this.getQuality()==otherFilm.getQuality()) {
+			return this.getYear().compareTo(otherFilm.getYear());
+		} else {
+			return this.quality.compareTo(otherFilm.quality);			
+		}
 	}
 
 	@Override
