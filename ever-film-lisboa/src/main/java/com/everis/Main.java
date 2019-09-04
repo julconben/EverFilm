@@ -6,7 +6,7 @@ package com.everis;
  */
 public class Main {
     public static void main(String[] args) {
-        // Add your run execution here
-        System.out.println("Hello World!");
+        Film movie1 = new Film();
+        double media = movie1.mediaRatings();
     }
 }
