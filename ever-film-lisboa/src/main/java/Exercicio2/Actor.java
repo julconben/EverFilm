@@ -8,15 +8,20 @@ import Exercicio.People;
 public class Actor extends People {
 
 	private List<Integer> oscarNominations = new ArrayList<Integer>();
-	private TipoActor tipoActor; 
-	
-	public Actor(String name, String surname, int age,TipoActor tipoActor, List<Integer> oscarNominations) {
+	private TipoActor tipoActor;
+
+	public Actor(String name, String surname, int age, TipoActor tipoActor, List<Integer> oscarNominations) {
 		super(name, surname, age);
-		
+
 		this.oscarNominations = oscarNominations;
 		this.tipoActor = tipoActor;
 	}
-	
+
+	public Actor(String name, String surname, int age, TipoActor tipoActor) {
+		super(name, surname, age);
+		this.tipoActor = tipoActor;
+	}
+
 	public TipoActor getTipoActor() {
 		return tipoActor;
 	}
@@ -33,12 +38,11 @@ public class Actor extends People {
 		this.oscarNominations = oscarNominations;
 	}
 
-
-
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return this.getClass().getSimpleName() + "\n" + super.toString() + "\nOscar Nominations: " + this.getOscarNominations() + "\nTipo de Actor: " + this.getTipoActor();
+		return this.getClass().getSimpleName() + "\n" + super.toString() + "\nOscar Nominations: "
+				+ this.getOscarNominations() + "\nTipo de Actor: " + this.getTipoActor();
 	}
 
 }
