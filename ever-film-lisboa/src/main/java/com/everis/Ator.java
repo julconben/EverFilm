@@ -24,8 +24,13 @@ public class Ator extends Pessoa  {
 	}
 
 	public Ator() {
+		super();
 	}
 	
+	public Ator(String nome,String apelido,Integer idade, TipoAtor tipo) {
+		super(nome,apelido,idade);
+		this.tipo = tipo;
+	}
 	
 	public Ator(String nome,String apelido,Integer idade, TipoAtor tipo,List<Integer> oscarNominations) {
 		super(nome,apelido,idade);

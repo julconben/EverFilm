@@ -34,8 +34,9 @@ public class User extends Pessoa implements IUser {
 		this.username = username;
 	}
 
-	public User(Map<Filme, Integer> ratings, List<Filme> watchedFilm, String username) {
-		super();
+	public User(String nome, String apelido, Integer idade, Map<Filme, Integer> ratings, List<Filme> watchedFilm,
+			String username) {
+		super(nome, apelido, idade);
 		this.ratings = ratings;
 		this.watchedFilm = watchedFilm;
 		this.username = username;
@@ -66,11 +67,16 @@ public class User extends Pessoa implements IUser {
 		} else {
 			for (Integer ratingFilm : ratings.values()) {
 				contador += ratingFilm;
-				
+
 			}
-			return ((double)contador) / ratings.size();
-			}
+			return ((double) contador) / ratings.size();
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "User [Ratings=" + ratings + ", Filmes Visto=" + watchedFilm + ", Username=" + username + ", Nome="
+				+ getNome() + ", Apelido=" + getApelido() + ", Idade()=" + getIdade() + "]";
+	}
 
+}

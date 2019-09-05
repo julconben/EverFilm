@@ -106,7 +106,7 @@ public class Filme implements Comparable<Filme>, IFilm {
 
 	@Override
 	public String toString() {
-		return "Filme [titulo=" + getTitulo() + ", ano=" + getAno() + "Qualidade= " + getQuality(qualidade) + "]";
+		return "Filme [titulo= " + getTitulo() + ", Ano= " + getAno() + "Qualidade= " + getQuality(qualidade) + "]";
 	}
 
 	public int compareTo(Filme otherFilm) {

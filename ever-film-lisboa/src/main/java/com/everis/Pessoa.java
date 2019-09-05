@@ -73,18 +73,14 @@ public class Pessoa implements Comparable<Pessoa> {
 			return false;
 		return true;
 	}
-	
-	public int compareTo(Pessoa otherPessoa) {
-		return this.getIdade().compareTo(otherPessoa.getIdade());
-	}
 
 	@Override
 	public String toString() {
-		return "Pessoa [nome=" + nome + ", apelido=" + apelido + ", idade=" + idade + "]";
+		return "Pessoa [Nome=" + nome + ", Apelido=" + apelido + ", Idade=" + idade + "]";
 	}
-	
-	
-	
-	
+
+	public int compareTo(Pessoa otherPessoa) {
+		return this.getIdade().compareTo(otherPessoa.getIdade());
+	}
 
 }
