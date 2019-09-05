@@ -73,18 +73,23 @@ public class User extends People implements IUser{
 		return true;
 	}
 
-	public double getAverageRating() { //TODO NO RATED FILM EXCEPTION
+	public double getAverageRating() throws NoRatedFilmsException { //TODO NO RATED FILM EXCEPTION
 		
 		List<Integer> rat = new ArrayList<Integer>(ratings.values());
 		double totalRating = 0;
 		int i;
+		
+		if (ratings.size() == 0) {
+			throw new NoRatedFilmsException();
+		}
+		else {
 		
 		for (i=0; i < ratings.size(); i++) {
 			totalRating = totalRating + rat.get(i);
 		}
 		
 		return totalRating/i;
-	}
+	}}
 	
 	
 

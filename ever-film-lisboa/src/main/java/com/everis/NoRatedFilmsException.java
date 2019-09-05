@@ -1,9 +1,10 @@
 package com.everis;
 
-public class NoRatedFilmsException extends Exception{
+public class NoRatedFilmsException extends Exception {
 
-	public NoRatedFilmsException(String errorMessage, Throwable err) {
-		super(errorMessage, err);
+	public NoRatedFilmsException() {
+		super("There are no rated Films to disclose.");
+
 	}
 
 }

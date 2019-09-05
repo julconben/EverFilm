@@ -2,7 +2,7 @@ package com.everis;
 
 public interface IUser {
 	
-	public double getAverageRating();
+	public double getAverageRating() throws NoRatedFilmsException;
 
 	boolean equals(Object o);
 }

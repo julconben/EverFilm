@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -15,6 +16,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+    	
+    	/**DATA FOR TESTING*/
     	
     	//film names lists to use for director****************************************************************************************************************
     	List<String> listFilms1 = new ArrayList<String>();
@@ -30,7 +33,7 @@ public class Main {
     	listFilms2.add("Pokemon");
     	listFilms2.add("Barbie");
     	
-    	//people **********************************************************************************************************************************************
+    	//random people **********************************************************************************************************************************************
     	People people1 = new People("Joao","Pedro", 15);
     	People people2 = new People("Maria","Silva", 35);
     	People people3 = new People("Antonia","Lopes", 52);
@@ -40,7 +43,7 @@ public class Main {
     	Director director1 = new Director("Frank", "Darabout", 85, "Disney", listFilms1); //Diretor
     	Director director2= new Director("James", "Cameron", 50, "21 century Fox", listFilms2); //Diretor
     	
-    	//Oscar lists******************************************************************************************************************************************
+    	//Oscar lists, awkwardly geometric******************************************************************************************************************************************
     	List<Integer> oscars1 = new ArrayList<Integer>(); //simulate 'random' oscar nominations
     	for(int i=0; i<5; i++)
     		oscars1.add(1991+i);
@@ -53,16 +56,19 @@ public class Main {
     	for(int i=0; i<5; i++)
     		oscars3.add(1950+(i+3));
     	
+    	List<Integer> oscars0 = new ArrayList<Integer>();
+    	
     	//Actors**********************************************************************************************************************************************
     	Actor actor1 = new Actor("Morgan","Freeman", 70, oscars3, com.everis.ActorType.MAIN); //actor morgan
     	Actor actor2 = new Actor("Tim", "Robbins", 69, oscars2, com.everis.ActorType.SUPPORTING); //actor tim
     	Actor actor3 = new Actor("Mary","Fields", 20, oscars1, com.everis.ActorType.STUNTMAN); //actress mary
     	Actor actor4 = new Actor("Anne", "Hattaway", 35, oscars2, com.everis.ActorType.SUPPORTING); //actress anne
+    	Actor actor5 = new Actor("Leonardo", "Dicaprio", 55, oscars0, com.everis.ActorType.MAIN); //dicaprio, but he has an oscar now
     	
     	//List of actors***************************************************************************************************************************************
     	List<Actor> act1 = new ArrayList<Actor>();
     	act1.add(actor1);
-    	act1.add(actor2);
+    	act1.add(actor5);
     	act1.add(actor3);    	
     	act1.add(actor4);
     	
@@ -72,7 +78,7 @@ public class Main {
     	
     	List<Actor> act3 = new ArrayList<Actor>();
     	act3.add(actor4);
-    	act3.add(actor3);
+    	act3.add(actor5);
     	act3.add(actor1);
     	
     	//Films**********************************************************************************************************************************************
@@ -153,12 +159,34 @@ public class Main {
         allPeople.add(people3);
         allPeople.add(people4);
         
+        System.out.println("_________________________________________________________________________________________");
+        
         Collections.sort(allPeople);
         for(int i=0; i<allPeople.size(); i++) 
         	System.out.println(allPeople.get(i).firstName +" "+ allPeople.get(i).surName +" "+  allPeople.get(i).age);
         
+        System.out.println("_________________________________________________________________________________________");
+       
         
-//        /**teste getAverageRating()*/
+        /**Gera Billboard*/
+        
+        Billboard bill = new Billboard();
+        List b = new LinkedList<Film>();
+        
+
+        b.add(film10);
+        b.add(film1);
+        b.add(film3);
+        b.add(film4);
+        bill.setBillboard(b);     
+        bill.addFilm(film5);
+ 
+        /**TESTE removeOldFilm()*/
+//        System.out.println(bill.toString());
+//        bill.removeOldFilm();
+//        System.out.println(bill.toString());
+        
+       /**teste getAverageRating()*/
 //       System.out.println(user1.getAverageRating());
         
 //        /** TESTE GETSTRING*/
@@ -167,7 +195,7 @@ public class Main {
 //        System.out.println(film5.toString());
 //        System.out.println(film7.toString());
         
-//        /** TESTE GETQUALITY*/
+       /** TESTE GETQUALITY*/
 //        System.out.println(film1.getQualityString());
 //        System.out.println(film4.getQualityString());
 //        System.out.println(film6.getQualityString());
