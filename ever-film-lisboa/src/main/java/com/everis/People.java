@@ -28,15 +28,11 @@ public class People {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-	
+
 	public People(String name, String surname, Integer age) {
 		super();
 		this.name = name;
 		this.surname = surname;
 		this.age = age;
-	}
-
-	public People() {
-		super();
 	}
 }
