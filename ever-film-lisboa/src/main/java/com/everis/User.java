@@ -27,12 +27,15 @@ public class User extends People implements IUser{
 		this.ratings = ratings;
 		this.watchedFilms = watchedFilms;
 	}
+	
 	public String getUserName() {
 		return userName;
 	}
+	
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+	
 	public HashMap<String, Integer> getRatings() {
 		return ratings;
 	}

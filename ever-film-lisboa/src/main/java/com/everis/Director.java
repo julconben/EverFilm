@@ -17,7 +17,6 @@ public class Director extends People {
 		this.productionCompany = productionCompany;
 		this.filmography = filmography;
 	}
-	
 
 	public String getProductionCompany() {
 		return productionCompany;
