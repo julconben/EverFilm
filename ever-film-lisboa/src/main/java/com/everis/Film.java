@@ -20,6 +20,25 @@ public class Film implements IFilm {
     }
 	
 	
+	public Film() {
+		super();
+		this.title = "Titanic";
+		this.year = 2005;
+		this.quality = 6;
+		
+	}
+
+
+	public Film(String title, int year, int quality, Director diretor, List<Actor> cast) {
+		super();
+		this.title = title;
+		this.year = year;
+		this.quality = quality;
+		this.diretor = diretor;
+		this.cast = cast;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Film [" + title + " - " + year + " - " + quality + "]";

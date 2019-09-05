@@ -1,38 +1,51 @@
 package com.everis;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class User extends People implements IUser {
-	private HashMap<Film, Integer> ratings;
+	private Map<Film, Integer> ratings;
 	private List<Film> watchedFilms;
 	private String username;
 	
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.username = "laura123";
+		
+		
 	}
 
-	public User(String name, String surname, Integer age) {
+	public User(String name, String surname, Integer age, Map<Film, Integer> ratings, List<Film> watchedFilms, String username) {
 		super(name, surname, age);
-		this.username = "laura123";
+		this.ratings=ratings;
+		this.watchedFilms=watchedFilms;
+		this.username=username;
+		
 		
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Object getRatings() {
+	public Map<Film, Integer> getRatings() {
 		
 		return ratings;
 	}
 	
-	public double getAverageRating() {
-		int sum = 0;
-		for (Map.Entry<Film, Integer> i : ratings.entrySet) {
-			
-			sum += ;
+	public double getAverageRating() throws NoRatedFilmsException{
+		double sum = 0;
+		int count = 0;
+		if(this.getRatings().keySet().isEmpty()) {
+			throw new NoRatedFilmsException("No hay ratings");
+		}else {
+			for(Entry<Film, Integer> e : ratings.entrySet()) {
+		        Integer rate = e.getValue();
+		        sum += rate;
+		        count++;
+		        System.out.println("rate "+rate+", sum "+sum+", count "+count);
+		    }
+			double media = sum/count;
+			System.out.println("A media de ratings e "+media);
+			return media;
 		}
-		double media = sum/ratingsArray.length;
-		System.out.println("A media dos ratings é "+ media);
-		return (media);
 	}
 
 	@Override
